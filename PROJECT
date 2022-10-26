@@ -1,0 +1,16 @@
+domain: io.huyuan
+layout:
+- go.kubebuilder.io/v3
+projectName: k8s-once-daemonset
+repo: k8s-once-daemonset
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: io.huyuan
+  group: apps
+  kind: OnceDaemonSet
+  path: k8s-once-daemonset/api/v1
+  version: v1
+version: "3"

@@ -1,0 +1,85 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - apps.io.huyuan
+  resources:
+  - oncedaemonsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps.io.huyuan
+  resources:
+  - oncedaemonsets/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - apps.io.huyuan
+  resources:
+  - oncedaemonsets/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - node
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - node/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - node/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - pod
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pod/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - pod/status
+  verbs:
+  - get
+  - patch
+  - update

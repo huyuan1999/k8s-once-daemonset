@@ -1,0 +1,27 @@
+# permissions for end users to view oncedaemonsets.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: oncedaemonset-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: k8s-once-daemonset
+    app.kubernetes.io/part-of: k8s-once-daemonset
+    app.kubernetes.io/managed-by: kustomize
+  name: oncedaemonset-viewer-role
+rules:
+- apiGroups:
+  - apps.io.huyuan
+  resources:
+  - oncedaemonsets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps.io.huyuan
+  resources:
+  - oncedaemonsets/status
+  verbs:
+  - get
